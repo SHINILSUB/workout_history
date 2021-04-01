@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 
 import { Platform } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import MainPage from '../pages/MainPage';
-import MyPage from '../pages/MyPage';
 import AddPage from '../pages/AddPage';
+
+
 import { Ionicons } from '@expo/vector-icons';
 
 const Tabs = createBottomTabNavigator();
@@ -19,12 +19,10 @@ const TabNavigator = ({ navigation, route }) => {
           let iconName = Platform.OS === 'ios' ? 'ios-' : 'md-';
 
           if (route.name === 'MainPage') {
-            iconName += 'list';
-          } else if (route.name === 'AddPage') {
-            iconName += 'apps-outline';
-          } else if (route.name === 'MyPage') {
-            iconName += 'person';
-          }
+            iconName += 'list';}
+            else if (route.name === 'AddPage') {
+                iconName += 'albums';
+              }       
           return (
             <Ionicons
               name={iconName}
@@ -46,9 +44,11 @@ const TabNavigator = ({ navigation, route }) => {
         // inactiveTintColor: 'gray',
       }}
     >
-      <Tabs.Screen name="MainPage" component={MainPage} />
       <Tabs.Screen name="AddPage" component={AddPage} />
-      <Tabs.Screen name="MyPage" component={MyPage} />
+      <Tabs.Screen name="MainPage" component={MainPage} />
+      
+      
+      
     </Tabs.Navigator>
   );
 };

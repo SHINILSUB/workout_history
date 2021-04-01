@@ -20,5 +20,5 @@ export default function HeaderComponent() {
 }
 
 const styles = StyleSheet.create({
-  logoImage: { width: 100, resizeMode: 'contain', marginLeft: 10 },
+  logoImage: { width: 100, resizeMode: 'contain'  },
 });
